@@ -26,9 +26,12 @@ builder.Services.AddCors(cors => cors.AddPolicy("MyPolicy", builder =>
 }));
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<IAdminUserService, AdminUserService>();
@@ -39,6 +42,10 @@ builder.Services.AddScoped<ILoginService, LoginService>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddScoped<IMissionService, MissionService>();
+builder.Services.AddScoped<IMissionRepository, MissionRepository>();
+
 
 builder.Services.AddScoped<IMissionThemeRepository, MissionThemeRepository>();
 builder.Services.AddScoped<IMissionThemeService, MissionThemeService>();

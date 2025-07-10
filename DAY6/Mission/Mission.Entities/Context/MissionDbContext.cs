@@ -7,6 +7,8 @@ namespace Mission.Entities.Context
     public class MissionDbContext(DbContextOptions<MissionDbContext> options) : DbContext(options)
     {
         public DbSet<User> User { get; set; }
+        //public DbSet<Mission.Entities.Entities.MissionEntity>  MissionEntities { get; set; }
+        public DbSet<MissionEntity> MissionEntities { get; set; }
 
         public DbSet<MissionTheme> MissionThemes { get; set; }
 
